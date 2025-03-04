@@ -9,4 +9,4 @@ class Users(Base):
     role_id = ForeignKeyField(Roles)
 
 if __name__ == "__main__":
-    connect().create_tables([Users])
+    pass

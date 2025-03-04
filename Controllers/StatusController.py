@@ -1,6 +1,7 @@
 from Models.Statuses import *
 
 
+
 class StatusController:
     # метод вывода всех записей таблицы статусы
     @classmethod
@@ -14,4 +15,4 @@ class StatusController:
 if __name__ == "__main__":
     for row in StatusController.get():
         print(row.id, row.status_name)
-    print(StatusController.show(11))
+    print(StatusController.show(4))

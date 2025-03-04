@@ -10,4 +10,4 @@ def connect():
      return mysql_db
 
 if __name__ == "__main__":
-    connect()
+    print(connect().connect())

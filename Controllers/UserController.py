@@ -1,5 +1,5 @@
 from Models.Users import *
-from bcrypt import *
+from bcrypt import hashpw, gensalt, checkpw
 
 
 class UsersController:
@@ -13,13 +13,14 @@ class UsersController:
     def show_login(cls, login):
         return Users.get_or_none(Users.login == login)
 
+    @classmethod
     def get(cls):
         return Users.select()
 
     @classmethod
-    def registration(cls, login, password, role):
+    def registration(cls, login, password, role_id):
         hash_password = hashpw(password.encode('utf-8'), gensalt())
-        Users.create(login=login, password=hash_password, role=role)
+        Users.create(login=login, password=hash_password, role_id=role_id)
 
     @classmethod
     def auth(cls,login,password):
@@ -45,7 +46,7 @@ class UsersController:
 
 
 if __name__ == "__main__":
-    UsersController.registration('asdas',123,2)
+    pass
 
 
 
