@@ -46,7 +46,9 @@ class UsersController:
 
 
 if __name__ == "__main__":
-    pass
+    for row in UsersController.get():
+        print(row.id, row.login,row.password, row.role_id)
+    print(UsersController.show(4))
 
 
 

@@ -7,6 +7,8 @@ class Users(Base):
     login = CharField()
     password = CharField()
     role_id = ForeignKeyField(Roles)
+    class Meta:
+        table_name = 'users'
 
 if __name__ == "__main__":
     pass

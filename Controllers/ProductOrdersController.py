@@ -28,9 +28,9 @@ class ProductOrdersController:
 
 if __name__ == "__main__":
     for row in ProductOrdersController.get():
-        print(row.id, row.name, row.price, row.count, row.description)
+        print(row.id, row.order_id, row.product_id)
     print(ProductOrdersController.show(11))
 
-    ProductOrdersController.add('2','3')
+
 
 

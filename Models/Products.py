@@ -5,6 +5,8 @@ class Products(Base):
     price = DecimalField()
     count = IntegerField()
     description = TextField()
+    class Meta:
+        table_name = 'products'
 
 if __name__ == "__main__":
-    connect().create_tables([Products])
+  pass

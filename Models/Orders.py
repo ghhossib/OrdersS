@@ -16,6 +16,8 @@ class Orders(Base):
     description = CharField()
     delivery_data = CharField()
     delivery_payment = CharField()
+    class Meta:
+        table_name = 'orders'
 
 if __name__ == "__main__":
     pass
