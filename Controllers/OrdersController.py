@@ -13,16 +13,16 @@ class OrdersController:
         return Orders.get_or_none(id)
 
     @classmethod
-    def add(cls, name, date,status_id, client_id, product_id,payment_id,description,delivery_data,delivery_payment):
+    def add(cls, name, date,client_id,description,status_id=3,payment_id=None,delivery_data=2):
+        if payment_id is not None:
+            status_id = 2
         Orders.create(name=name,
                       date=date,
                       status_id=status_id,
                       client_id=client_id,
-                      product_id=product_id,
                       payment_id=payment_id,
                       description=description,
-                      delivery_data=delivery_data,
-                      delivery_payment=delivery_payment)
+                      delivery_data=delivery_data,)
 
 
     @classmethod
@@ -47,11 +47,24 @@ class OrdersController:
         return Orders.select().where(Orders.date.between(day1,day2)).count()
 
     @classmethod
-    def report_month(cls, start_date,end_date):
+    def report_month(cls, start_date):
+        # Преобразуем start_date в объект datetime
         start_date = datetime.strptime(start_date, '%Y-%m-%d')
-        end_date = datetime.strptime(end_date, '%Y-%m-%d')
+
+        # Определяем первый день следующего месяца
+        if start_date.month == 12:
+            next_month = start_date.replace(year=start_date.year + 1, month=1, day=1)
+        else:
+            next_month = start_date.replace(month=start_date.month + 1, day=1)
+
+        # Последний день текущего месяца — это день перед первым днём следующего месяца
+        end_date = next_month - timedelta(days=1)
+
+        # Выполняем запрос
         count = Orders.select().where(
-            (Orders.date>=start_date) & (Orders.date <= end_date)).count()
+            (Orders.date >= start_date) & (Orders.date <= end_date)
+        ).count()
+
         return count
 
 
@@ -74,11 +87,14 @@ class OrdersController:
 
 if __name__ == "__main__":
     #OrdersController.add('zakaz20','2023-10-19','2','35','3','3','asdasdas','sssss','asdasdas')
-    OrdersController.report_day('2023-10-16')
-    OrdersController.report_month('2023-10-01', '2023-10-31')
+    #OrdersController.report_day('2023-10-16')
+    #OrdersController.report_month('2023-10-01', '2023-10-31')
+    #print(OrdersController.report_day('2022-03-15'))
     # for row in OrdersController.get():
-    #     print(row.id, row.name,row.date,row.status_id,row.client_id,row.product_id,row.delivery_payment,row.payment_id,row.description,row.delivery_data)
+    #     print(row.id, row.name,row.date,row.status_id,row.client_id,row.delivery_payment,row.payment_id,row.description,row.delivery_data)
     # print(OrdersController.show(4))
+    #print(OrdersController.report_month('2023-09-10'))
+    pass
 
 
 

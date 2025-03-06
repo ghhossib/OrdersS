@@ -1,3 +1,4 @@
+from Controllers.OrdersController import OrdersController
 from Models.Products_Orders import *
 
 
@@ -30,6 +31,7 @@ if __name__ == "__main__":
     for row in ProductOrdersController.get():
         print(row.id, row.order_id, row.product_id)
     print(ProductOrdersController.show(11))
+    #ProductOrdersController.add('5','3')
 
 
 

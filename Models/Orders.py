@@ -11,10 +11,9 @@ class Orders(Base):
     date = DateTimeField()
     status_id = ForeignKeyField(Statuses)
     client_id = ForeignKeyField(Users)
-    product_id = ForeignKeyField(Products)
     payment_id = ForeignKeyField(Payment)
     description = CharField()
-    delivery_data = CharField()
+    delivery_data = ForeignKeyField(Statuses)
     delivery_payment = CharField()
     class Meta:
         table_name = 'orders'
