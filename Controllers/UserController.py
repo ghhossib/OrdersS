@@ -46,9 +46,13 @@ class UsersController:
 
 
 if __name__ == "__main__":
-    for row in UsersController.get():
-        print(row.id, row.login,row.password, row.role_id)
-    print(UsersController.show(4))
+
+    # UsersController.registration('gay1','gay1',1)
+    # for row in UsersController.get():
+    #     print(row.id, row.login,row.password, row.role_id)
+    # print(UsersController.show(4))
+    print(UsersController.auth('user228','user228'))
+
 
 
 

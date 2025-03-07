@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>панель клиента</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="clr-header blue">
+            <h1>Панель администратора</h1>
+        </div>
+    </header>
+    <section class="panel_wrp">
+        <div class="container">
+            <nav aria-label="breadcrumb" style="margin-top: 30px;">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="login.html">Вход</a></li>  
+                    <li class="breadcrumb-item active" aria-current="page">Панель администратора
+                    </li>
+                </ol>
+            </nav>
+            <table class="table mt-5 table-clr">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Логин</th>
+                        <th scope="col">Роль</th>
+                        <th scope="col">Пароль</th>
+                        <th scope="col">Изменить</th>
+                        <th scope="col">Удалить</th>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>user1</td>
+                       
+                        <td>
+                           User
+                            
+                        </td>
+                        <td>
+                           456456456
+                        </td>
+                        <td>
+                            <a href="edit_admin-panel.html"><div class="btn btn-success">Изменить</div></a> 
+                        </td>
+                        <td><div class="btn btn-danger">Удалить</div></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>user2</td>
+                        
+                        <td>
+                           User
+                            
+                        </td>
+                        <td>
+                            7456456456
+                        </td>
+                        <td><a href="edit_admin-panel.html"><div class="btn btn-success">Изменить</div></a></td>
+                        <td><div class="btn btn-danger">Удалить</div></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>user3</td>
+                        
+                        <td>
+                            Manager
+                            
+                        </td>
+                        <td>
+                            3453454345
+                        </td>
+                        <td><a href="edit_admin-panel.html"><div class="btn btn-success">Изменить</div></a></td>
+                        <td><div class="btn btn-danger">Удалить</div></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>user4</td>
+                        
+                        <td>Admin</td>
+                        <td>
+                            12312312
+                        </td>
+                        <td><a href="edit_admin-panel.html"><div class="btn btn-success">Изменить</div></a></td>
+                        <td><div class="btn btn-danger">Удалить</div></td>
+                    </tr>
+            
+    
+                </tbody>
+            </table>
+
+
+
+
+
+        </div>
+    </section>
+    <section>
+        <form>
+            <div class="form_panel-wrp ">
+                <div class="admin_panel-inputs d-flex ">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Логин</label>
+                        <input type="text" class="form-control">
+
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Пароль</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">роль</label>
+                        <input type="text" class="form-control">
+                    </div>
+
+                </div>
+                <div class="admin_panel-btn">
+                    <button type="submit" class="btn btn-primary">Добавить</button>
+                </div>
+
+
+            </div>
+
+
+        </form>
+    </section>
+
+
+
+
+
+    
+</body>
+
+
+</html>

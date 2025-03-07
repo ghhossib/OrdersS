@@ -86,7 +86,7 @@ class OrdersController:
 
 
 if __name__ == "__main__":
-    #OrdersController.add('zakaz20','2023-10-19','2','35','3','3','asdasdas','sssss','asdasdas')
+    OrdersController.add('zakaz','2023-10-16','2','asdas',payment_id=3,)
     #OrdersController.report_day('2023-10-16')
     #OrdersController.report_month('2023-10-01', '2023-10-31')
     #print(OrdersController.report_day('2022-03-15'))
@@ -94,7 +94,7 @@ if __name__ == "__main__":
     #     print(row.id, row.name,row.date,row.status_id,row.client_id,row.delivery_payment,row.payment_id,row.description,row.delivery_data)
     # print(OrdersController.show(4))
     #print(OrdersController.report_month('2023-09-10'))
-    pass
+
 
 
 

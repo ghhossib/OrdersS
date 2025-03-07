@@ -13,7 +13,7 @@ class Orders(Base):
     client_id = ForeignKeyField(Users)
     payment_id = ForeignKeyField(Payment)
     description = CharField()
-    delivery_data = ForeignKeyField(Statuses)
+    delivery_data_id = ForeignKeyField(Statuses)
     delivery_payment = CharField()
     class Meta:
         table_name = 'orders'

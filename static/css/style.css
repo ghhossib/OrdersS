@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: inter;
+    src: url(../fonts/Inter-Regular.otf);
+}
+
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+.btn,
+button,
+label {
+    font-family: inter;
+}
+
+.reg,
+.reg-txt {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.card {
+    background-color: #d7d7d7a9;
+    border-radius: 20px;
+
+}
+
+.reg-txt {
+    text-align: center;
+}
+
+body {
+    background-color: #464b6e6e;
+}
+
+.reg-clm {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-clr {
+    background-color: #9B5EB4;
+    border: none;
+    width: 100px;
+}
+
+.btn-clr:hover {
+    background-color: #bb75d6;
+    border: none;
+
+
+}
+
+.clr-reg-txt {
+    text-align: center;
+    padding-top: 5px;
+}
+
+.clr-reg {
+    color: #9B5EB4;
+    text-decoration: none;
+
+
+}
+
+.clr-header {
+    color: white;
+    padding: 25px 0 25px 0;
+    background-color: #9B5EB4;
+    text-align: center;
+
+
+}
+
+.btn-catalog,
+.btn-delivery {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+
+}
+
+.btns-wrapper {
+    gap: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20vh;
+}
+
+.card-title,
+.card-price {
+    text-align: center;
+}
+
+.btn-buy {
+    width: -webkit-fill-available;
+    background-color: #9B5EB4;
+    border: none;
+}
+
+.btn-buy:hover {
+    background-color: #bb75d6;
+}
+
+.payments_data {
+    margin-top: 25vh;
+}
+
+.card_deli,
+.card-status,
+.card-text-deli,
+.card-address {
+    font-size: 36px;
+    width: auto;
+}
+
+/* для грида */
+.card {
+    width: auto;
+}
+
+.card_deli {
+    padding: 20px;
+}
+
+/* test */
+.assssd {
+    display: flex;
+    flex-direction: column;
+}
+
+/* test */
+.blue {
+    background-color: #435DDF;
+}
+
+.panel_wrp {
+    margin-top: 15vh;
+}
+
+.panel_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    font-size: 25px;
+    margin-bottom: 5vh;
+
+}
+
+.btn-success,
+.btn-danger {
+    padding: 7px 40px 7px 40px;
+}
+
+.form_panel-wrp input {
+    width: 270px;
+}
+
+.admin_panel-inputs {
+    gap: 65px;
+}
+
+.form_panel-wrp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10vh;
+
+}
+
+.admin_panel-btn button {
+    width: 300px;
+    padding: 7px 40px 7px 40px;
+}
+
+.btns-manager {
+    margin-top: 10vh;
+}
+
+.column-mngr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 36px;
+    margin-bottom: 20px;
+    background-color: #D9D9D9;
+    padding: 10px;
+}
+
+.reports_card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.report_input input {
+    width: 300px;
+
+}
+
+.edit_panel {
+    display: flex;
+    gap: 65px;
+    align-items: center;
+    justify-content: start;
+}
+
+.table-clr {
+    background-color: #f0f8ff;
+    /* Цвет фона таблицы */
+    width: 100%;
+    border-collapse: collapse;
+    /* Убираем двойные границы */
+}
+
+.table-clr th,
+.table-clr td {
+    background-color: inherit;
+    padding: 10px;
+    text-align: left;
+}
+
+.table-clr th {
+    background-color: #5e60696e;
+}
+
+.table-clr tbody tr:nth-child(odd) {
+    background-color: #5e60696e;
+}
+
+.table-clr tbody tr:nth-child(even) {
+    background-color: #5e60696e;
+}
+
