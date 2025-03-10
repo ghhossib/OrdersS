@@ -46,12 +46,12 @@ class UsersController:
 
 
 if __name__ == "__main__":
-
-    # UsersController.registration('gay1','gay1',1)
+    pass
+    #UsersController.registration('fff','fff',1)
     # for row in UsersController.get():
     #     print(row.id, row.login,row.password, row.role_id)
     # print(UsersController.show(4))
-    print(UsersController.auth('user228','user228'))
+    #print(UsersController.auth('user1','user1'))
 
 
 
