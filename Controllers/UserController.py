@@ -18,10 +18,13 @@ class UsersController:
         return Users.select()
 
     @classmethod
-    def registration(cls, login, password, role_id):
-        hash_password = hashpw(password.encode('utf-8'), gensalt())
-        Users.create(login=login, password=hash_password, role_id=role_id)
-
+    def registration(cls, login, password):
+        try:
+            hash_password = hashpw(password.encode('utf-8'), gensalt())
+            Users.create(login=login, password=hash_password, role_id=3)
+        except Exception as error:
+            print(error)
+            return False
     @classmethod
     def auth(cls,login,password):
         if Users.get_or_none(Users.login == login) != None:
@@ -46,8 +49,8 @@ class UsersController:
 
 
 if __name__ == "__main__":
-    pass
-    #UsersController.registration('fff','fff',1)
+
+    UsersController.registration('fff','fff')
     # for row in UsersController.get():
     #     print(row.id, row.login,row.password, row.role_id)
     # print(UsersController.show(4))

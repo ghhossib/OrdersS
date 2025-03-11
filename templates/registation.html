@@ -10,30 +10,28 @@
             </div>
             <div class="card p-4 shadow" style="width: 25rem;">
 
-                <form>
+                <form action="/registration" method="post">
                     <div class="mb-3">
-                        <label for="exampleInputLogin" class="form-label">Логин</label>
+                        <label for="exampleInputLogin" class="form-label">Введите Логин</label>
                         <input name="login" type="text" class="form-control border-login" id="exampleInputLogin"
                             aria-describedby="loginHelp" required>
 
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Пароль</label>
+                        <label for="exampleInputPassword1" class="form-label">Введите Пароль</label>
                         <input name="password" type="password" class="form-control border-login"
                             id="exampleInputPassword1" aria-describedby="passwordHelp" required>
 
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputLogin" class="form-label">ФИО</label>
-                        <input name="login" type="text" class="form-control border-login" id="exampleInputLogin"
-                            aria-describedby="loginHelp" required>
-
-                    </div>
+                    {% if message != ''%}
+                    <p class="alert alert-danger" role="alert">{{message}}</p>
+                    {% endif %}
 
                     <div class="d-flex justify-content-center">
                         <button type="submit" class="btn btn-primary w-50 button-login btn-clr">Регистрация</button>
 
                     </div>
+
                     <div class="clr-reg-txt">
                         Уже есть аккаунт? <a class="clr-reg" href="/">Войти</a>
                     </div>

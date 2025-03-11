@@ -1,3 +1,5 @@
+from pyexpat.errors import messages
+
 from bcrypt import *
 from flask import Flask, render_template, request, redirect
 from Controllers.UserController import UsersController
@@ -103,27 +105,6 @@ def client_delivery():
         return render_template('delivery_status.html',
                                title=title)
 
-# #маршрут обновления пользователя
-# @application.route('/user/<int:id>', methods=['GET', 'POST'])
-# @login_required
-# def user_update(id):
-#     title = "Обновление пользвателя"
-# #     if current_user.role == "Administrator":
-#         user = UserController.show(id)
-#         if request.method == 'POST':
-#             #получаем значения введеное в поле формы по имени fullname
-#
-#             fullname = request.form.get('fullname')
-#             role = request.form.get('role')
-#             # передаю значения полей в метод обновления
-#             UserController.update(id, username=fullname, role=role)
-#
-#             #Возращение пользователя обратно после заполнения
-#             return redirect('/admin')
-# #
-# #         return render_template('edit_user.html',
-# #                                title=title, user=user)
-
 @application.route('/user/<int:id>', methods=['GET','POST'])
 @login_required
 def a_edit_panel(id):
@@ -219,8 +200,23 @@ def c_payment():
 @application.route('/registration', methods=['GET','POST'])
 def registration():
         title = "Регистрация"
+        message = ''
+        if request.method == 'POST':
+            login = request.form.get('login')
+            password = request.form.get('password')
+
+            if UsersController.registration(login, password):
+                print('e')
+                return redirect('/client')
+            else:
+                print('a')
+                message = 'Такой логин уже существует'
+
+
+
+
         return render_template('registation.html',
-                               title=title)
+                               title=title, message=message)
 
 
 
