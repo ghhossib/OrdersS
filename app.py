@@ -1,7 +1,7 @@
 from pyexpat.errors import messages
 
 from bcrypt import *
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, session
 from Controllers.UserController import UsersController
 from flask_login import LoginManager, login_required, login_user, logout_user, current_user
 
@@ -197,27 +197,46 @@ def c_payment():
 
 
 
-@application.route('/registration', methods=['GET','POST'])
-def registration():
-        title = "Регистрация"
-        message = ''
-        if request.method == 'POST':
-            login = request.form.get('login')
-            password = request.form.get('password')
+# @application.route('/registration', methods=['GET','POST'])
+# def registration():
+#         title = "Регистрация"
+#         message = ''
+#         if request.method == 'POST':
+#             login = request.form.get('login')
+#             password = request.form.get('password')
+#
+#             if UsersController.registration(login, password):
+#                 print('e')
+#                 return redirect('/client')
+#             else:
+#                 print('a')
+#                 message = 'Такой логин уже существует'
+#
+#
+#
+#
+#         return render_template('registation.html',
+#                                title=title, message=message)
 
-            if UsersController.registration(login, password):
-                print('e')
+
+@application.route('/registration', methods=['GET', 'POST'])
+def registration():
+    title = "Регистрация"
+    message = ''
+    if request.method == 'POST':
+        login = request.form.get('login')
+        password = request.form.get('password')
+        if UsersController.registration(login, password):
+            user = UsersController.show_login(login)  # Получаем пользователя
+            if UsersController.auth(login, password):
+                login_user(user)
                 return redirect('/client')
             else:
-                print('a')
-                message = 'Такой логин уже существует'
+                message = 'Ошибка авторизации после регистрации'
+        else:
+            message = 'Такой логин уже существует'
 
-
-
-
-        return render_template('registation.html',
-                               title=title, message=message)
-
+    return render_template('registation.html', title=title, message=message)
 
 
 @application.route('/manager-reports', methods=['GET','POST'])
@@ -228,16 +247,5 @@ def m_reports():
                                title=title)
 
 
-
-
-
-
-
-
-
-
-
 if __name__ == "__main__":
     application.run(debug=True)
-
-

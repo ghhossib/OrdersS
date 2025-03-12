@@ -17,14 +17,27 @@ class UsersController:
     def get(cls):
         return Users.select()
 
+    # @classmethod
+    # def registration(cls, login, password):
+    #     try:
+    #         hash_password = hashpw(password.encode('utf-8'), gensalt())
+    #         Users.create(login=login, password=hash_password, role_id=3)
+    #     except Exception as error:
+    #         print(error)
+    #         return False
     @classmethod
     def registration(cls, login, password):
+        # Проверяем, существует ли пользователь с таким логином
+        if Users.select().where(Users.login == login).exists():
+            return False  # Пользователь с таким логином уже существует
+
         try:
             hash_password = hashpw(password.encode('utf-8'), gensalt())
             Users.create(login=login, password=hash_password, role_id=3)
+            return True  # Пользователь успешно создан
         except Exception as error:
             print(error)
-            return False
+            return False  # Произошла ошибка при создании пользователя
     @classmethod
     def auth(cls,login,password):
         if Users.get_or_none(Users.login == login) != None:
@@ -50,12 +63,9 @@ class UsersController:
 
 if __name__ == "__main__":
 
-    UsersController.registration('fff','fff')
-    # for row in UsersController.get():
-    #     print(row.id, row.login,row.password, row.role_id)
+    #print(UsersController.registration('ddd','ddd'))
+    #for row in UsersController.get():
+        #print(row.id, row.login,row.password, row.role_id)
+
     # print(UsersController.show(4))
-    #print(UsersController.auth('user1','user1'))
-
-
-
-
+    print(UsersController.auth('ddd','ddd'))

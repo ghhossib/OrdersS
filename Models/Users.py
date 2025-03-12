@@ -5,7 +5,7 @@ from flask_login import UserMixin
 
 class Users(UserMixin,Base):
     id = PrimaryKeyField
-    login = CharField()
+    login = CharField(unique=True)
     password = CharField()
     role_id = ForeignKeyField(Roles)
     class Meta:
