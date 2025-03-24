@@ -77,6 +77,9 @@ body {
 
 
 }
+.admin_panel-btn {
+margin-bottom: 10px;
+}
 
 .clr-header {
     color: white;

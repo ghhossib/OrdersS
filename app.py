@@ -50,25 +50,32 @@ def home():
     return render_template('login.html', title=title, message=message)
 
 
-@application.route('/admin',methods=['GET','POST'])
+@application.route('/admin', methods=['GET', 'POST'])
 @login_required
 def admin():
     title = "Админ панель"
-    # Услови при котором открывается страница admin
     if current_user.role_id.id == 1:
         users = UsersController.get()
 
         if request.method == 'POST':
             login = request.form.get('login')
-            role = request.form.get('role')
+            password = request.form.get('password')
+            role_id = request.form.get('role')
 
-            UsersController.registration(login, '123', role)
-            return redirect('/admin')
+            print(f"Данные из формы: login={login}, password={password}, role_id={role_id}")
 
-        return render_template('admin_panel.html',
-                           title = title, users=users)
+            if not login or not password or not role_id:
+                return "Все поля должны быть заполнены", 400
+
+            if UsersController.registration(login, password, role_id):
+                return redirect('/admin')
+            else:
+                return "Ошибка при добавлении пользователя", 400
+
     else:
         return redirect('/logout')
+
+    return render_template('admin_panel.html', title=title, users=users)
 
 
 @application.route('/logout')
@@ -237,6 +244,9 @@ def registration():
             message = 'Такой логин уже существует'
 
     return render_template('registation.html', title=title, message=message)
+
+
+
 
 
 @application.route('/manager-reports', methods=['GET','POST'])

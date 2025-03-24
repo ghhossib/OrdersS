@@ -26,18 +26,25 @@ class UsersController:
     #         print(error)
     #         return False
     @classmethod
-    def registration(cls, login, password):
-        # Проверяем, существует ли пользователь с таким логином
+    def registration(cls, login, password, role_id=3):
         if Users.select().where(Users.login == login).exists():
-            return False  # Пользователь с таким логином уже существует
+            print("Пользователь с таким логином уже существует")
+            return False
 
         try:
             hash_password = hashpw(password.encode('utf-8'), gensalt())
-            Users.create(login=login, password=hash_password, role_id=3)
-            return True  # Пользователь успешно создан
+            Users.create(login=login, password=hash_password, role_id=role_id)
+            print("Пользователь успешно создан")
+            return True
         except Exception as error:
-            print(error)
-            return False  # Произошла ошибка при создании пользователя
+            print(f"Ошибка при создании пользователя: {error}")
+            return False
+
+
+
+
+
+
     @classmethod
     def auth(cls,login,password):
         if Users.get_or_none(Users.login == login) != None:
