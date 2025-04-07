@@ -112,6 +112,14 @@ def client_delivery():
         return render_template('delivery_status.html',
                                title=title)
 
+
+@application.route('/test123', methods=['GET','POST'])
+@login_required
+def test123():
+        title = "Каталог товаров"
+        return render_template('test123.html',
+                               title=title)
+
 @application.route('/user/<int:id>', methods=['GET','POST'])
 @login_required
 def a_edit_panel(id):
