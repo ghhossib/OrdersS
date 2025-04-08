@@ -16,10 +16,6 @@ login_manager = LoginManager(application)
 def user_loader(id):
     return UsersController.show(int(id))
 
-
-
-
-
 @application.route('/', methods=['POST', 'GET'])
 def home():
     title = "Вход"
