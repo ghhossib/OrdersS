@@ -20,140 +20,22 @@
                 </li>
             </ol>
         </nav>
-        <div class="row g-4">
-            <div class="col-lg-3 col-md-4 col-sm-6">
+       <div class="row g-4">
+    {% for product in products %}
+    <div class="col-lg-3 col-md-4 col-sm-6">
         <div class="card h-100 shadow-sm">
-           <img style="border-radius: inherit;" src="https://imgholder.ru/286x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" />
-          <div class="card-body">
-            <h5 class="card-title">Заголовок карточки</h5>
-              <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и
-                        составлять основную часть содержимого карты.</p>
-                <p class="card-count">Количество 5шт.</p>
-                <p class="card-price">Цена $$$</p>
-
-
-              <a href="payment_products.html" class="btn btn-primary btn-buy">Купить</a>
-
-          </div>
+            <img style="border-radius: inherit;" src="https://imgholder.ru/286x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" class="card-img-top" alt="{{product.name}}">
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">{{product.name}}</h5>
+                <p class="card-text">{{product.description}}</p>
+                <p class="card-count">Количество: {{product.count}} штук</p>
+                <p class="card-price">Цена: {{product.price}}₽</p>
+                <a href="payment_products.html" class="btn btn-primary btn-buy mt-auto">Купить</a>
+            </div>
         </div>
-      </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="card h-100 shadow-sm">
-           <img style="border-radius: inherit;" src="https://imgholder.ru/286x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" />
-          <div class="card-body">
-            <h5 class="card-title">Заголовок карточки</h5>
-              <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и
-                        составлять основную часть содержимого карты.</p>
-                <p class="card-count">Количество 5шт.</p>
-                <p class="card-price">Цена $$$</p>
-
-
-              <a href="payment_products.html" class="btn btn-primary btn-buy">Купить</a>
-
-          </div>
-        </div>
-      </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="card h-100 shadow-sm">
-           <img style="border-radius: inherit;" src="https://imgholder.ru/286x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" />
-          <div class="card-body">
-            <h5 class="card-title">Заголовок карточки</h5>
-              <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и
-                        составлять основную часть содержимого карты.</p>
-                <p class="card-count">Количество 5шт.</p>
-                <p class="card-price">Цена $$$</p>
-
-
-              <a href="payment_products.html" class="btn btn-primary btn-buy">Купить</a>
-
-          </div>
-        </div>
-      </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="card h-100 shadow-sm">
-           <img style="border-radius: inherit;" src="https://imgholder.ru/286x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" />
-          <div class="card-body">
-            <h5 class="card-title">Заголовок карточки</h5>
-              <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и
-                        составлять основную часть содержимого карты.</p>
-                <p class="card-count">Количество 5шт.</p>
-                <p class="card-price">Цена $$$</p>
-
-
-              <a href="payment_products.html" class="btn btn-primary btn-buy">Купить</a>
-
-          </div>
-        </div>
-      </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="card h-100 shadow-sm">
-           <img style="border-radius: inherit;" src="https://imgholder.ru/286x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" />
-          <div class="card-body">
-            <h5 class="card-title">Заголовок карточки</h5>
-              <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и
-                        составлять основную часть содержимого карты.</p>
-                <p class="card-count">Количество 5шт.</p>
-                <p class="card-price">Цена $$$</p>
-
-
-              <a href="payment_products.html" class="btn btn-primary btn-buy">Купить</a>
-
-          </div>
-        </div>
-      </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="card h-100 shadow-sm">
-           <img style="border-radius: inherit;" src="https://imgholder.ru/286x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" />
-          <div class="card-body">
-            <h5 class="card-title">Заголовок карточки</h5>
-              <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и
-                        составлять основную часть содержимого карты.</p>
-                <p class="card-count">Количество 5шт.</p>
-                <p class="card-price">Цена $$$</p>
-
-
-              <a href="payment_products.html" class="btn btn-primary btn-buy">Купить</a>
-
-          </div>
-        </div>
-      </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="card h-100 shadow-sm">
-           <img style="border-radius: inherit;" src="https://imgholder.ru/286x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" />
-          <div class="card-body">
-            <h5 class="card-title">Заголовок карточки</h5>
-              <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и
-                        составлять основную часть содержимого карты.</p>
-                <p class="card-count">Количество 5шт.</p>
-                <p class="card-price">Цена $$$</p>
-
-
-              <a href="payment_products.html" class="btn btn-primary btn-buy">Купить</a>
-
-          </div>
-        </div>
-      </div>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-        <div class="card h-100 shadow-sm">
-           <img style="border-radius: inherit;" src="https://imgholder.ru/286x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" />
-          <div class="card-body">
-            <h5 class="card-title">Заголовок карточки</h5>
-              <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и
-                        составлять основную часть содержимого карты.</p>
-                <p class="card-count">Количество 5шт.</p>
-                <p class="card-price">Цена $$$</p>
-
-
-              <a href="payment_products.html" class="btn btn-primary btn-buy">Купить</a>
-
-          </div>
-        </div>
-      </div>
-
-
-            
-            
-        </div>
+    </div>
+    {% endfor %}
+</div>
 
     </div>
 

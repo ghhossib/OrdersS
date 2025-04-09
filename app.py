@@ -1,7 +1,10 @@
+from itertools import product
 from pyexpat.errors import messages
 
 from bcrypt import *
 from flask import Flask, render_template, request, redirect, session
+
+from Controllers.ProductsController import ProductsController
 from Controllers.UserController import UsersController
 from flask_login import LoginManager, login_required, login_user, logout_user, current_user
 
@@ -98,8 +101,10 @@ def client():
 @login_required
 def client_catalog():
         title = "Каталог товаров"
+        if current_user.role_id.id == 3:
+            products = ProductsController.get()
         return render_template('catalog_products.html',
-                               title=title)
+                               title=title,products=products)
 
 @application.route('/client_delivery', methods=['GET','POST'])
 @login_required
