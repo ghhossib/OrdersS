@@ -11,8 +11,8 @@
             <nav aria-label="breadcrumb" style="margin-top: 30px;">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/logout">Выйти</a></li>
-                  <li class="breadcrumb-item"><a href="manager_panel.html">Панель менеджера</a></li>
-                  <li class="breadcrumb-item"><a href="manager_catalog_products.html">Управление катологом товаров</a></li>
+                  <li class="breadcrumb-item"><a href="/manager">Панель менеджера</a></li>
+                  <li class="breadcrumb-item"><a href="/manger-catalog_products">Управление катологом товаров</a></li>
                   <li class="breadcrumb-item active" aria-current="page">Изменение данных о товаре
                 </li>
                 </ol>
@@ -21,12 +21,11 @@
                 <div class="card g-col-3" style="width: 306px;">
                     <img style="border-radius: inherit;" src="https://imgholder.ru/286x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson" />
                     <div class="card-body card_catalog">
-                        <h5 class="card-title">Заголовок карточки</h5>
-                        <p class="card-text">Небольшой пример текста, который должен основываться на названии карточки и
-                            составлять основную часть содержимого карты.</p>
-                        <p class="card-count">Количество 5шт.</p>
-                        <p class="card-price">Цена $$$</p>
-                        <a  href="manager_catalog_products.html" class="btn btn-danger" style="padding: 7px 30px 7px 30px; width: 272px;">Отменить</a>
+                        <h5 class="card-title">{{product.name}}</h5>
+                        <p class="card-text">{{product.description}}</p>
+                        <p class="card-count">Количество: {{product.count}} шт.</p>
+                        <p class="card-price">Цена: {{product.price}}₽</p>
+                        <a  href="/manger-catalog_products" class="btn btn-danger" style="padding: 7px 30px 7px 30px; width: 272px;">Отменить</a>
                        
 
                     </div>
@@ -39,21 +38,25 @@
 
             </div>
 
-            <form>
+            <form action="" method="post">
                 <div class="form_panel-wrp edit_catalog_products ">
                     <div class="admin_panel-inputs d-flex ">
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Название товара</label>
-                            <input type="text" class="form-control">
+                            <input type="text" name="name" class="form-control">
 
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Описание</label>
-                            <input type="text" class="form-control">
+                            <input type="text" name="description" class="form-control">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Цена</label>
-                            <input type="text" class="form-control">
+                            <input type="text" name="price" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Количество</label>
+                            <input type="text" name="count" class="form-control">
                         </div>
 
                     </div>
@@ -64,7 +67,7 @@
                         </div>
                         <div class="edit_panell-btn" style="margin-top: 19px;">
                             <button type="submit" class="btn btn-primary"
-                                style="background-color: #5EB45E; border: none;">Добавить</button>
+                                style="background-color: #5EB45E; border: none;">Изменить</button>
                         </div>
 
                     </div>

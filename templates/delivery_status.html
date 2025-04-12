@@ -12,70 +12,70 @@
             <nav aria-label="breadcrumb" style="margin-top: 30px;">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/logout">Выйти</a></li>
-                    <li class="breadcrumb-item"><a href="clients_panel.html">Панель клиента</a></li> 
-                    <li class="breadcrumb-item active" aria-current="page">Статус доставки
-                    </li>
+                    <li class="breadcrumb-item"><a href="/client">Панель клиента</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Статус доставки</li>
                 </ol>
             </nav>
-            <div class="cards-wrapper grid" style="margin-top: 40px;">
-                <div class="card card_deli g-col-6">
-                    <div class="card-body">
-                        <h5 class="card-title-deli">Заказ №123</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary card-address">Адрес доставки: Ул.Пушкина д.228</h6>
-                        <h6 class="card-status">Тип оплаты: Карта</h6>
-                        <p class="card-text">Статус: <span class="delivery_status_run"
-                                style="color: #AAAA28;">Доставляется</span></p>
 
-
-
-                    </div>
-                </div> 
-                <div class="card card_deli g-col-6">
-                    <div class="card-body">
-                        <h5 class="card-title-deli">Заказ №333</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary card-address">Адрес доставки: Ул.Колотушкина д.12</h6>
-                        <h6 class="card-status">Тип оплаты: Карта</h6>
-                        <p class="card-text">Статус: <span class="delivery_status_cancelled"
-                                style="color: #F40408;">Отменен</span></p>
-
-
-
+            <div class="row row-cols-1 row-cols-md-2 g-4 mt-4">
+                <!-- Order 123 - In Delivery -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Заказ №123</h5>
+                            <p class="card-text text-muted">Адрес доставки: Ул.Пушкина д.228</p>
+                            <p class="card-text">Тип оплаты: Карта</p>
+                            <p class="card-text">Статус:
+                                <span class="badge bg-warning text-dark">Доставляется</span>
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="card card_deli g-col-6">
-                    <div class="card-body">
-                        <h5 class="card-title-deli">Заказ №888</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary card-address">Адрес доставки: Ул.Пушкина д.228</h6>
-                        <h6 class="card-status">Тип оплаты: Карта</h6>
-                        <p class="card-text">Статус: <span class="delivery_status_end"
-                                style="color: #61BF19;">Доставлен</span></p>
 
-
-
+                <!-- Order 333 - Cancelled -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Заказ №333</h5>
+                            <p class="card-text text-muted">Адрес доставки: Ул.Колотушкина д.12</p>
+                            <p class="card-text">Тип оплаты: Карта</p>
+                            <p class="card-text">Статус:
+                                <span class="badge bg-danger">Отменен</span>
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="card card_deli g-col-6">
-                    <div class="card-body">
-                        <h5 class="card-title-deli">Заказ №777</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary card-address">Адрес доставки: Ул.Пушкина д.228</h6>
-                        <h6 class="card-status">Тип оплаты: Карта</h6>
-                        <p class="card-text-deli">Статус: <span class="delivery_status_return"
-                                style="color: #C22729;">Возрат</span></p>
 
-
-
+                <!-- Order 888 - Delivered -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Заказ №888</h5>
+                            <p class="card-text text-muted">Адрес доставки: Ул.Пушкина д.228</p>
+                            <p class="card-text">Тип оплаты: Карта</p>
+                            <p class="card-text">Статус:
+                                <span class="badge bg-success">Доставлен</span>
+                            </p>
+                        </div>
                     </div>
                 </div>
-                
-                
-                
 
+                <!-- Order 777 - Returned -->
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Заказ №777</h5>
+                            <p class="card-text text-muted">Адрес доставки: Ул.Пушкина д.228</p>
+                            <p class="card-text">Тип оплаты: Карта</p>
+                            <p class="card-text">Статус:
+                                <span class="badge bg-secondary">Возврат</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-
         </div>
     </section>
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>

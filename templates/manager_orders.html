@@ -12,7 +12,7 @@
         <nav aria-label="breadcrumb" style="margin-top: 30px;">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/logout">Выйти</a></li>
-                <li class="breadcrumb-item"><a href="manager_panel.html">Панель менеджера</a></li>
+                <li class="breadcrumb-item"><a href="/manager">Панель менеджера</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Управление заказами
                 </li>
             </ol>
@@ -22,63 +22,28 @@
                 <tr>
                     <th scope="col">Номер заказа</th>
                     <th scope="col">Статус доставки</th>
+                    <th scope="col">Ник заказчика</th>
                     <th scope="col">Изменить статус</th>
-                    <th scope="col">Отмена доставки</th>
+
                    
                 </tr>
             </thead>
             <tbody>
+            {% for order in orders %}
                 <tr>
-                    <th scope="row">Заказ №123</th>
+                    <th scope="row">{{order.name}}</th>
                     <td><span class="delivery_status_cancelled"
-                        style="color: #F40408;">Отменен</span></td>
-                   
+                        style="color: #F40408;">{{order.status_id}}</span></td>
+                    <td><span class="delivery_status_cancelled"
+                        style="color: #F40408;">{{order.client_id}}</span></td>
                     <td>
                         <a href="/manger-edit_orders"><div class="btn btn-success">Изменить статус</div></a>
                         
                     </td>
-                    <td>
-                        <div class="btn btn-danger">Отмена доставки</div>
-                    </td>
+
                 </tr>
-                <tr>
-                    <th scope="row">Заказ №333</th>
-                    <td>  <span class="delivery_status_end"
-                        style="color: #61BF19;">Доставлен</span></td>
-                    
-                    <td>
-                        <a href="/manger-edit_orders"><div class="btn btn-success">Изменить статус</div></a>
-                        
-                    </td>
-                    <td>
-                        <div class="btn btn-danger">Отмена доставки</div>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">Заказ №888</th>
-                    <td><span class="delivery_status_run"
-                        style="color: #AAAA28;">Доставляется</span></td>
-                    
-                    <td>
-                        <a href="/manger-edit_orders"><div class="btn btn-success">Изменить статус</div></a>
-                        
-                    </td>
-                    <td>
-                        <div class="btn btn-danger">Отмена доставки</div>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">Заказ №777</th>
-                    <td><span class="delivery_status_return"
-                        style="color: #C22729;">Возрат</span></td>
-                    
-                    <td><a href="/manger-edit_orders"><div class="btn btn-success">Изменить статус</div></a>
-                        
-                    </td>
-                    <td>
-                        <div class="btn btn-danger">Отмена доставки</div>
-                    </td>
-                </tr>
+            {% endfor %}
+
         
 
             </tbody>
